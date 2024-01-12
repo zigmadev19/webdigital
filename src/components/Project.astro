@@ -1,0 +1,96 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+
+const allProject = await getCollection('projects');
+---
+
+<style is:global >
+    .splide__arrows {
+        position: absolute;
+        top: .5rem;
+        right: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .splide__arrow  {
+        background: #e5e7eb;
+        cursor: pointer;
+        height: 3.5rem;
+        width: 3.5rem;
+        position: static;
+        transform: translateY(0%);
+    }
+
+    .splide__arrow svg {
+        fill: #374151;
+    }
+
+    .splide__arrow:hover svg {
+        fill: #fff;
+    }
+
+    .splide__arrow:hover {
+        background: #ec4899;
+        color: #fff;
+    }
+</style>
+
+<section class="splide py-16" aria-labelledby="carousel-heading">
+    <div class="container mx-auto px-4 relative">
+        <div id="carousel-heading" class="space-y-2">
+            <p class="text-indigo-600 font-bold text-sm">OUR PORTOFOLIO</p>
+            <h2 class="text-4xl font-bold">
+                See Our Recent
+                <span class="text-indigo-600">Projects</span>
+            </h2>
+        </div>
+
+            <div class="splide__track p-4 mt-8">
+                <ul class="splide__list">
+                {
+                    allProject.map( p => (
+                         <li class="splide__slide">
+                            <article class="space-y-4 rounded-lg overflow-hidden shadow-lg">
+                                <div class="h-3/4">
+                                    <Image class="aspect-[4/3]"  src={p.data.img} alt={p.data.title} />
+                                </div>
+
+                                <div class="text-center pb-4">
+                                    <h3 class="font-bold text-2xl">{p.data.title}</h3>
+                                    <p class="text-gray-500">{p.data.subTitle}</p>
+                                </div>
+                            </article>
+                         </li>
+                    ))
+                }
+                </ul>
+            </div>
+    </div>
+</section>
+
+<script>
+  document.addEventListener( 'DOMContentLoaded', function() {
+    var splide = new Splide( '.splide', {
+        type   : 'loop',
+        perPage: 3,
+        breakpoints: {
+                425: {
+                    perPage: 1,
+                },
+                768: {
+                    arrows: false,
+                    autoplay: true,
+                    interval: 3000,
+                }
+        },
+        focus  : 'center',
+        gap: '1rem',
+        pagination: false,
+        } );
+    splide.mount();
+  } );
+</script>
+

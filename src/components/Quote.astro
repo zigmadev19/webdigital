@@ -1,0 +1,27 @@
+---
+import { getImage } from "astro:assets";
+import quoteBg from "../assets/quote-bg.jpg";
+
+const optimizedBackgroundQoute = await getImage({src: quoteBg, format: 'webp'})
+---
+
+<section class="bg-center bg-no-repeat bg-cover py-16 text-white" style={`background-image: url(${optimizedBackgroundQoute.src});`}>
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12 space-y-4">
+            <p class="font-bold">GET YOUR FREE QUOTE</p>
+            <h2 class="text-3xl font-bold">Grow With Us Now</h2>
+        </div>
+
+        <form class="max-w-fit mx-auto">
+            <div class="flex flex-col lg:flex-row md:items-center rounded-3xl lg:rounded-full overflow-hidden">
+                <div class="bg-white text-black flex flex-col lg:flex-row gap-6 px-10 py-6">
+                    <input id="website" class="py-1 border-none focus:outline-none focus:ring focus:ring-transparent" type="text" placeholder="your website url..." autocomplete="website"/>
+                    <input id="email" class="py-1 border-none focus:outline-none focus:ring focus:ring-transparent" type="text" placeholder="email address..." autocomplete="email"/>
+                </div>
+                <div class="px-10 py-6 w-full text-center bg-indigo-600">
+                    <button class="py-1" type="submit">Get Quotes Now</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>

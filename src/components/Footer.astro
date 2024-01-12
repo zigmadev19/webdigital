@@ -1,0 +1,14 @@
+---
+import { getImage } from "astro:assets";
+import footerBg from "../assets/footer-bg.jpg";
+
+const optimizedBackgroundFooter = await getImage({src: footerBg, format: 'webp'})
+---
+<footer class="py-10 text-white bg-center bg-no-repeat bg-cover" style={`background-image: url(${optimizedBackgroundFooter.src});`}>
+    <div class="container mx-auto px-4">
+        <div class="text-center lg:flex lg:justify-between lg:items-center">
+            <p>Copyright © 2024 All Rights Reserved. <span>Design By TemplateMo</span></p>
+            <p>Power By <a href="/">Astro</a> <a href="/">tailwind</a></p>
+        </div>
+    </div>
+</footer>

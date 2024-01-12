@@ -1,0 +1,59 @@
+---
+import { Image } from 'astro:assets';
+
+import Phone from '../assets/phone-icon.png';
+import Location from '../assets/location-icon.png';
+import Email from '../assets/email-icon.png';
+---
+
+<section id="contact" class="py-32">
+    <div class="container mx-auto px-4">
+        <div class="space-y-2 text-center">
+            <p class="text-indigo-600 font-bold text-sm">CONTACT US</p>
+            <h2 class="text-4xl font-bold">
+                Get In Touch With Us
+                <span class="text-indigo-600">Now</span>
+            </h2>
+        </div>
+
+        <div class="mt-16 flex flex-col lg:flex-row gap-8 rounded-3xl shadow-lg overflow-hidden">
+            <div class="aspect-square md:aspect-[4/2] lg:w-2/5">
+                <iframe title="maps" class="w-full h-full" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14688.311140315089!2d-43.35413946008301!3d-23.02091601439037!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9bdb695cd967b7%3A0x171cdd035a6a9d84!2sAv.%20L%C3%BAcio%20Costa%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%20Brazil!5e0!3m2!1sen!2sus!4v1704949250051!5m2!1sen!2sus" width="600" height="750" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+            <div class="lg:w-3/5 py-8 space-y-8">
+                <div class="flex flex-col md:flex-row justify-center gap-12 mx-8">
+                    <div class="text-center px-6 py-4 shadow-lg rounded-2xl">
+                        <Image class="mb-4 mx-auto" src={Phone} alt="nomber phone" />
+                        <span class="font-bold">010-020-0340</span>
+                    </div>
+                    <div class="text-center px-6 py-4 shadow-lg rounded-2xl">
+                        <Image class="mb-4 mx-auto" src={Email} alt="email" />
+                        <span class="font-bold">our@email.com</span>
+                    </div>
+                    <div class="text-center px-6 py-4 shadow-lg rounded-2xl">
+                        <Image class="mb-4 mx-auto" src={Location} alt="location" />
+                        <span class="font-bold">123 Rio de Janeiro</span>
+                    </div>
+                </div>
+
+                <div class="max-w-lg mx-auto">
+                    <form id="contactMe" name="contactMe" class="mx-8">
+                        <div class="mb-5">
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                            <input type="email" id="email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="name@flowbite.com" autocomplete="off" required>
+                        </div>
+                        <div class="mb-5">
+                            <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                            <input type="password" id="password" name="password" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-full focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autocomplete="off"  required>
+                        </div>
+                        <div class="flex items-start mb-5">
+                            <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-3xl border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="text-pink-400 border border-pink-400 hover:bg-pink-400 hover:text-white ease-out duration-300 font-medium rounded-full text-sm w-full sm:w-auto px-5 py-2.5 text-center">Send your message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

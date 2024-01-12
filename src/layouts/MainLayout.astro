@@ -1,0 +1,45 @@
+---
+//components
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+<html lang="en" class="scroll-smooth">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#fff" />
+		<!-- Primary Meta Tags -->
+<title>website digital marketing</title>
+<meta name="title" content="website digital marketing" />
+<meta name="description" content="Temukan berbagai solusi digital marketing terbaik di sini! Kami menawarkan layanan optimasi mesin pencari (SEO), penciptaan konten, sosial media marketing, dan email marketing." />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://metatags.io/" />
+<meta property="og:title" content="website digital marketing" />
+<meta property="og:description" content="Temukan berbagai solusi digital marketing terbaik di sini! Kami menawarkan layanan optimasi mesin pencari (SEO), penciptaan konten, sosial media marketing, dan email marketing." />
+<meta property="og:image" content="https://metatags.io/images/meta-tags.png" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://metatags.io/" />
+<meta property="twitter:title" content="website digital marketing" />
+<meta property="twitter:description" content="Temukan berbagai solusi digital marketing terbaik di sini! Kami menawarkan layanan optimasi mesin pencari (SEO), penciptaan konten, sosial media marketing, dan email marketing." />
+<meta property="twitter:image" content="https://metatags.io/images/meta-tags.png" />
+
+<!-- Meta Tags Generated with https://metatags.io -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+		<title>Astro</title>
+	</head>
+	<body>
+		<Header />
+        <main>
+            <slot />
+        </main>
+        <Footer />
+        <script is:inline src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+        <script is:inline src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.0/flowbite.min.js"></script>
+	</body>
+</html>

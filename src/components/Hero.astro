@@ -1,0 +1,22 @@
+---
+import { Image } from 'astro:assets';
+import HeroImage from '../assets/hero.png';
+---
+<section>
+    <div class="container mx-auto px-4 py-12">
+        <div class="space-y-12 lg:flex lg:items-center lg:gap-14">
+            <div class="text-center space-y-7 lg:text-left lg:w-1/2">
+                <p class="text-xl font-bold text-pink-500">DIGITAL MEDIA AGENCY</p>
+                <h1 class="font-bold text-5xl md:text-6xl">We Boost Your Website Traffic</h1>
+                <p class="text-gray-500">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore, quidem, quod, adipisci nesciunt quia possimus pariatur quaerat officia odit ad at unde voluptas blanditiis magnam.</p>
+
+                <div>
+                    <a class="text-pink-600 border border-pink-600 text-lg px-6 py-2 rounded-full" href="/">Contact Us</a>
+                </div>
+            </div>
+            <div class="lg:w-1/2">
+                <Image src={ HeroImage } alt="hero banner" />
+            </div>
+        </div>
+    </div>
+</section>
